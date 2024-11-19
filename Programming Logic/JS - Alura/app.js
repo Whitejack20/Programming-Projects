@@ -1,7 +1,8 @@
 // Display a message for the user
 alert('Boas vindas ao jogo do número secreto!');
 // Variable definition
-let numeroSecreto = parseInt(Math.random() * 10 + 1) // Pseudo-random generation and integer truncation
+let teto = 100
+let numeroSecreto = parseInt(Math.random() * teto + 1) // Pseudo-random generation and integer truncation
 // Display the variable on the Console tab
 console.log(numeroSecreto);
 // Storage and user input
@@ -11,7 +12,7 @@ let tentativas = 1;
 // While Loop
 while(chute != numeroSecreto) {
 
-    chute = prompt('Escolha um número entre 1 e 10')
+    chute = prompt(`Escolha um número entre 1 e ${teto}`)
 
     // Simple Conditional
     if (chute == numeroSecreto) {
