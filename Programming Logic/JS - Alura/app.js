@@ -1,22 +1,21 @@
 // Display a message for the user
 alert('Boas vindas ao jogo do número secreto!');
 // Variable definition
-let numeroSecreto = 9;
+let numeroSecreto = parseInt(Math.random() * 10 + 1) // Pseudo-random generation and integer truncation
 // Display the variable on the Console tab
 console.log(numeroSecreto);
 // Storage and user input
 let chute;
-let tentativas = 0;
+let tentativas = 1;
 
 // While Loop
 while(chute != numeroSecreto) {
 
-    chute = prompt('Escolha um número entre 1 e 30')
+    chute = prompt('Escolha um número entre 1 e 10')
 
     // Simple Conditional
     if (chute == numeroSecreto) {
-        // alert(`Isso aí! Você descobriu o número secreto ${numeroSecreto}`) // Template Strings
-        alert('Isso aí! Você descobriu o número secreto ' + numeroSecreto + ' com ' + tentativas + ' tentativas.'); // Alternative
+        break;
     }
     else {
         if (chute > numeroSecreto) {
@@ -29,3 +28,8 @@ while(chute != numeroSecreto) {
     }
 
 }
+
+// Ternary Operator
+let palavraTentativa = tentativas > 1 ? ' tentativas.' : ' tentativa.';
+// alert(`Isso aí! Você descobriu o número secreto ${numeroSecreto}`) // Template Strings
+alert('Isso aí! Você descobriu o número secreto ' + numeroSecreto + ' com ' + tentativas + palavraTentativa); // Alternative
